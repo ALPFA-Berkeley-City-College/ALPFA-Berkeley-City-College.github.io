@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ALPFA Berkeley City College: student chapter of the Association of Latino Professionals For America. Events, how to join, and our board.">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+<title>ALPFA Berkeley City College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+dd .perks{display:flex;flex-wrap:wrap;gap:6px;margin:0}
+/* Layout: logo-gradient masthead with the next event, a sticky section bar, then the semester strip, events, how to join, the board, professionals and social links on one scrolling student page. */
+:root{
+  --navy:#003660; --teal:#00627e; --navy-ink:#ffffff; --gold:#d4a52a; --gold-ink:#241a00;
+  --bg:#f2f7f9; --surface:#ffffff; --fg:#0c2238; --muted:#4c6476; --line:#d4e2ea;
+  --chip:#e1eef3; --good:#1f7a4d; --good-bg:#e3f3ea; --warn:#8a5a00; --warn-bg:#fbf0d4; --idle-bg:#e6eef2;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --navy:#012a4d; --teal:#015269; --navy-ink:#f1f6fa; --gold:#e3b94c; --gold-ink:#241a00;
+  --bg:#061727; --surface:#0c2338; --fg:#e4eef5; --muted:#9db3c3; --line:#1b3a52;
+  --chip:#11334b; --good:#7fd6a6; --good-bg:#163527; --warn:#f0c46e; --warn-bg:#3a2a10; --idle-bg:#13304a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --navy:#012a4d; --teal:#015269; --navy-ink:#f1f6fa; --gold:#e3b94c; --gold-ink:#241a00;
+  --bg:#061727; --surface:#0c2338; --fg:#e4eef5; --muted:#9db3c3; --line:#1b3a52;
+  --chip:#11334b; --good:#7fd6a6; --good-bg:#163527; --warn:#f0c46e; --warn-bg:#3a2a10; --idle-bg:#13304a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.55 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.label{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+
+/* masthead */
+.mast{background:linear-gradient(135deg,var(--navy) 10%,var(--teal));color:var(--navy-ink);padding-block:28px 40px}
+.mast-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:48px;height:48px;border-radius:10px;display:block}
+.brand b{font:700 17px/1.2 var(--display);display:block}
+.brand span{font-size:13px;opacity:.75}
+.hub{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--gold-ink);font-weight:600;font-size:14px;padding:10px 16px;border-radius:999px;text-decoration:none}
+.hub:hover{filter:brightness(1.06)}
+.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px;margin-top:40px;align-items:end}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{max-width:52ch;opacity:.85;margin:16px 0 0}
+.next{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:20px}
+.next .label{color:var(--gold)}
+.next h2{font-size:26px;margin:10px 0 6px}
+.next .meta{font-size:14px;opacity:.85}
+.count{display:flex;align-items:baseline;gap:8px;margin-top:16px;font-family:var(--display)}
+.count strong{font-size:44px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+.nav a{white-space:nowrap;text-decoration:none;font-weight:600;font-size:14px;color:var(--muted);padding:8px 12px;border-radius:8px}
+.nav a:hover{background:var(--chip);color:var(--fg)}
+
+section{padding-block:48px 8px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.sec-head h2{font-size:clamp(26px,3.6vw,34px);font-weight:700}
+.sec-head p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+
+/* semester strip */
+.strip{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;overflow-x:auto}
+.track{position:relative;min-width:640px;height:150px}
+.months{position:absolute;inset:0 0 auto 0;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:2px solid var(--line);height:28px}
+.months span{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-left:6px;border-left:1px solid var(--line)}
+.lunch{position:absolute;right:0;bottom:0;font-size:12px;color:var(--muted)}
+.pin{position:absolute;top:38px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;width:120px;text-align:center}
+.pin i{display:block;width:14px;height:14px;border-radius:50%;background:var(--teal);border:3px solid var(--surface);box-shadow:0 0 0 2px var(--teal)}
+.pin.span i{width:auto;min-width:22px;height:14px;border-radius:7px}
+.pin.now i{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.pin b{font:600 13px/1.25 var(--body)}
+.pin small{font:500 11px/1 var(--mono);color:var(--muted)}
+.pin.low{top:88px}
+.undated{margin-top:14px;font-size:14px;color:var(--muted)}
+
+/* events */
+.events{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}
+.ev{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ev.next-up{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.ev-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ev .date{font:500 13px/1.2 var(--mono);color:var(--muted)}
+.ev h3{font-size:20px;font-weight:700}
+.ev p{margin:0;font-size:15px;color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.chip{font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--chip);color:var(--fg)}
+.chip.gold{background:var(--gold);color:var(--gold-ink)}
+.pill{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:6px}
+.pill.planning{background:var(--warn-bg);color:var(--warn)}
+.pill.idea{background:var(--idle-bg);color:var(--muted)}
+
+/* priorities */
+.prio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px 18px}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:start;padding-block:14px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row b{display:block;font-weight:600}
+.row span{font-size:14px;color:var(--muted)}
+.row time{font:500 12px/1.4 var(--mono);color:var(--muted);white-space:nowrap}
+.dot{width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--gold)}
+.dot.med{background:var(--muted)}
+.list h3{font-size:16px;font-weight:700;padding-block:16px 4px}
+
+/* board */
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}
+.role{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));color:var(--navy-ink);display:grid;place-items:center;font:700 15px/1 var(--display)}
+.role h3{font-size:17px;font-weight:700}
+.role .who{font-size:13px;color:var(--muted)}
+.role p{margin:0;font-size:14px}
+.role .leads{font-size:13px;color:var(--muted)}
+
+/* professionals */
+.pro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.card h3{font-size:22px;font-weight:700;margin-bottom:4px}
+.card .date{font:500 13px/1.3 var(--mono);color:var(--muted)}
+dl{margin:14px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;font-size:15px}
+dt{font:500 12px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+dd{margin:0}
+.perks{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.reach{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+.reach b{font-family:var(--display);font-size:16px}
+
+footer{margin-top:56px;background:linear-gradient(135deg,var(--navy) 10%,var(--teal));color:var(--navy-ink);padding-block:32px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer p{margin:0;opacity:.8;font-size:14px;max-width:60ch}
+
+@media (max-width:760px){
+  .hero,.prio,.pro{grid-template-columns:minmax(0,1fr)}
+  .hero{margin-top:28px}
+}
+@media (prefers-reduced-motion:no-preference){.ev,.role{transition:transform .15s ease}.ev:hover,.role:hover{transform:translateY(-2px)}}
+.social{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.soc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.soc h3{font-size:20px;font-weight:700}
+.soc p{margin:0;font-size:14px;color:var(--muted)}
+.soc .handle{font:500 14px/1.3 var(--mono);color:var(--fg);overflow-wrap:anywhere}
+.soc a.go{margin-top:auto;align-self:flex-start;display:inline-flex;gap:6px;font-weight:600;font-size:14px;padding:9px 14px;border-radius:999px;background:linear-gradient(135deg,var(--navy),var(--teal));color:var(--navy-ink);text-decoration:none}
+.ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--teal));color:var(--gold)}
+.ico svg{width:28px;height:28px}
+.soc-top{display:flex;align-items:center;gap:14px}
+.soc.pending{border-style:dashed}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.foot-links a{text-decoration:none;opacity:.9}
+.foot-links a:hover{opacity:1;text-decoration:underline}
+@media (max-width:760px){.social{grid-template-columns:minmax(0,1fr)}}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.step .num{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--gold-ink);font:800 17px/1 var(--display)}
+.step h3{font-size:20px;font-weight:700}
+.step p{margin:0;font-size:15px;color:var(--muted)}
+.step .handle{font:500 13px/1.3 var(--mono);overflow-wrap:anywhere}
+.step a.go{margin-top:auto;align-self:flex-start;font-weight:600;font-size:14px;padding:9px 14px;border-radius:999px;background:linear-gradient(135deg,var(--navy),var(--teal));color:var(--navy-ink);text-decoration:none}
+.step:first-child{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.premium{margin-top:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.premium p{margin:0;font-size:15px;flex:1 1 300px}
+@media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+
+
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-top">
+      <div class="brand"><img class="mark" src="data:image/png;base64,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" alt="ALPFA Berkeley City College logo"><div><b>ALPFA · Berkeley City College</b><span>Student chapter · Fall 2026</span></div></div>
+      <a class="hub" href="#join">Join ALPFA →</a>
+    </div>
+    <div class="hero">
+      <div>
+        <p class="label" style="color:var(--gold);margin:0 0 12px">Association of Latino Professionals For America</p>
+        <h1>Build your career network. <em>One lunch hour</em> at a time.</h1>
+        <p>ALPFA BCC is the Berkeley City College chapter of the Association of Latino Professionals For America. We help students build professional skills, meet working professionals and connect with chapters across the Bay Area. Membership is free, and our events fit into the BCC lunch hour.</p>
+      </div>
+      <div class="next" aria-live="polite">
+        <span class="label">Next up</span>
+        <h2>Pumpkin Social / Info Session</h2>
+        <div class="meta">Tue, Oct 27 · 12:20–1:20pm · Atrium, on campus</div>
+        <div class="count"><strong id="days">–</strong><span id="days-label">days to go</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a href="#semester">Semester</a><a href="#events">Events</a><a href="#join">Join</a><a href="#board">Meet the board</a><a href="#professionals">For professionals</a><a href="#connect">Connect</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section id="semester">
+    <div class="sec-head"><div><h2>The semester at a glance</h2><p>Mark your calendar. More dates are coming, so follow us on Instagram for updates.</p></div></div>
+    <div class="strip">
+      <div class="track" id="track">
+        <div class="months"><span>October</span><span>November</span><span>December</span></div>
+        <span class="lunch">All BCC events · 12:20–1:20pm</span>
+      </div>
+      <div class="undated">Dates coming soon: All-Schools Social (late Nov) · Social Destress (mid Dec, before finals) · Student Summit</div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="sec-head"><div><h2>Events</h2><p>All BCC events run 12:20–1:20pm, so you can drop in between classes. Bring a friend.</p></div></div>
+    <div class="events">
+      <article class="ev next-up"><div class="ev-top"><span class="date">Oct 27 · Tue</span></div><h3>Pumpkin Social / Info Session</h3><p>Pumpkins, snacks and a quick info session on LinkedIn, resume drafting, business casual and ALPFA Premium. No costumes needed.</p><div class="facts"><span class="chip">Atrium</span><span class="chip">Free</span></div></article>
+      <article class="ev"><div class="ev-top"><span class="date">Nov 7 · Sat</span></div><h3>Student Symposium</h3><p>The biggest professional-opportunity event of the term, hosted by ALPFA and full of professional opportunities. Needs ALPFA Premium.</p><div class="facts"><span class="chip">Cal State East Bay</span><span class="chip gold">ALPFA Premium</span></div></article>
+      <article class="ev"><div class="ev-top"><span class="date">Nov 16–18 · Tue 17 preferred</span></div><h3>Professional Round Robin</h3><p>Small groups rotate between 3–4 professionals for relaxed career chats, basic interview tips and maybe a mentor connection. Bring resumes, dress business casual.</p><div class="facts"><span class="chip">BCC, room TBD</span><span class="chip">Free</span></div></article>
+      <article class="ev"><div class="ev-top"><span class="date">Late November</span></div><h3>ALPFA Social (All Schools)</h3><p>A meetup for ALPFA chapters across Bay Area schools to connect and have fun.</p><div class="facts"><span class="chip">Host campus TBD</span></div></article>
+      <article class="ev"><div class="ev-top"><span class="date">Nov 30–Dec 2 · Tue Dec 1 preferred</span></div><h3>Career Panel: Life After College</h3><p>3–4 professionals on how they got into their field, their path through a Latino lens, what the work is like, and tips on networking and internships.</p><div class="facts"><span class="chip">BCC, room TBD</span><span class="chip">Free</span></div></article>
+      <article class="ev"><div class="ev-top"><span class="date">Mid December</span></div><h3>Social Destress</h3><p>A holiday break before finals where students unwrap gifts through funny challenges.</p><div class="facts"><span class="chip">Gift or small fee TBD</span></div></article>
+      <article class="ev"><div class="ev-top"><span class="date">Date TBD</span></div><h3>Student Summit</h3><p>An ALPFA student summit focused on professional development. Upgrade to ALPFA Premium early to save your spot.</p><div class="facts"><span class="chip gold">ALPFA Premium</span></div></article>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="sec-head"><div><h2>Join ALPFA</h2><p>Membership in ALPFA National is free for students. Joining counts you as part of our chapter and opens up opportunities from ALPFA's industry partners.</p></div></div>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><h3>Create your free ALPFA account</h3><p>Register on the ALPFA National membership portal. It's how ALPFA counts our chapter and shares opportunities with you.</p><span class="handle">membership.alpfaplus.org</span><a class="go" href="https://membership.alpfaplus.org/login" target="_blank" rel="noopener">Register with ALPFA National →</a></div>
+      <div class="step"><span class="num">2</span><h3>Fill out our chapter application</h3><p>Tell us your major, graduation date and when you're free, so we can plan events around your schedule.</p><span class="handle">Application link in our Linktree</span><a class="go" href="https://linktr.ee/qr/f2ca4c24-2402-4d4c-ac7b-5e78b938c1d9" target="_blank" rel="noopener">Open Linktree →</a></div>
+      <div class="step"><span class="num">3</span><h3>Come to three events</h3><p>Active members attend at least three sessions per semester to be eligible for top opportunities shared by our industry partners.</p><span class="handle">Next: Pumpkin Social, Oct 27</span><a class="go" href="#events">See events →</a></div>
+    </div>
+    <div class="premium"><span class="chip gold">ALPFA Premium</span><p>The Student Symposium (Nov 7) and Student Summit need an ALPFA Premium membership. You can upgrade from the same membership portal.</p></div>
+  </section>
+
+  <section id="board">
+    <div class="sec-head"><div><h2>Meet the board</h2><p>The students running ALPFA BCC this year. Say hi at any event.</p></div></div>
+    <div class="board">
+      <div class="role"><div class="avatar" aria-hidden="true">P</div><h3>President</h3><span class="who">Name coming soon</span><p>Runs the board and meetings; main contact for ALPFA National and BCC.</p></div>
+      <div class="role"><div class="avatar" aria-hidden="true">VP</div><h3>Vice-President</h3><span class="who">Name coming soon</span><p>Recruits professionals; Symposium and Summit logistics.</p></div>
+      <div class="role"><div class="avatar" aria-hidden="true">MD</div><h3>Marketing Director</h3><span class="who">Name coming soon</span><p>Member emails, posting schedule, approves every post.</p></div>
+      <div class="role"><div class="avatar" aria-hidden="true">M1</div><h3>Marketing Sub-head</h3><span class="who">Name coming soon</span><p>Social media posts, countdown and live stories.</p></div>
+      <div class="role"><div class="avatar" aria-hidden="true">M2</div><h3>Marketing Sub-head</h3><span class="who">Name coming soon</span><p>Flyers, event photos and recap posts.</p></div>
+      <div class="role"><div class="avatar" aria-hidden="true">T</div><h3>Treasurer</h3><span class="who">Name coming soon</span><p>Budget, purchases, receipts and reimbursements.</p></div>
+      <div class="role"><div class="avatar" aria-hidden="true">DE</div><h3>Director of Events</h3><span class="who">Name coming soon</span><p>Rooms, supplies, setup and the run of show.</p></div>
+    </div>
+  </section>
+
+  <section id="professionals">
+    <div class="sec-head"><div><h2>For professionals</h2><p>Want to volunteer? Our members are mostly first- and second-year community college students, many meeting professionals for the first time. Reach out to us on Instagram or Discord.</p></div></div>
+    <div class="pro">
+      <div class="card"><span class="label" style="color:var(--muted)">3–4 professionals</span><h3>Professional Round Robin</h3><span class="date">Nov 16, 17 or 18 · Tue Nov 17 preferred · 12:20–1:20pm</span>
+        <dl><dt>What</dt><dd>Relaxed rotations with small groups: career advice, basic interview tips, a few practice questions, maybe a mentor connection</dd><dt>Prep</dt><dd>None needed</dd><dt>We provide</dt><dd><span class="perks"><span class="chip">Lunch</span><span class="chip">Social media shoutout</span><span class="chip">BART under a block away</span></span></dd></dl></div>
+      <div class="card"><span class="label" style="color:var(--muted)">3–4 panelists</span><h3>Career Panel</h3><span class="date">Nov 30, Dec 1 or Dec 2 · Tue Dec 1 preferred · 12:20–1:20pm</span>
+        <dl><dt>What</dt><dd>How you got into your field, your path through a Latino lens, what your work is like, and tips on networking and internships</dd><dt>Prep</dt><dd>Questions sent ahead, optional short prep call</dd><dt>We provide</dt><dd><span class="perks"><span class="chip">Lunch</span><span class="chip">Social media shoutout</span><span class="chip">BART under a block away</span></span></dd></dl></div>
+    </div>
+  </section>
+  <section id="connect">
+    <div class="sec-head"><div><h2>Connect with ALPFA BCC</h2><p>Follow us for event updates, reminders and photos.</p></div></div>
+    <div class="social">
+      <div class="soc"><div class="soc-top"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6.5" width="17" height="13" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 6.5l1.4-2.2h4.2l1.4 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><div><span class="label" style="color:var(--muted)">Instagram</span><h3>@alpfabcc</h3></div></div><p>Event announcements, countdown stories and recap photos.</p><span class="handle">instagram.com/alpfabcc</span><a class="go" href="https://www.instagram.com/alpfabcc/" target="_blank" rel="noopener">Follow on Instagram →</a></div>
+      <div class="soc"><div class="soc-top"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 3.5V16h0A2.5 2.5 0 0 1 4 13.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="9" cy="10" r="1.2" fill="currentColor"/><circle cx="12" cy="10" r="1.2" fill="currentColor"/><circle cx="15" cy="10" r="1.2" fill="currentColor"/></svg></span><div><span class="label" style="color:var(--muted)">Discord</span><h3>Member server</h3></div></div><p>Chat with members, ask questions and get event reminders.</p><span class="handle">discord.com/invite/ZfFSBzdsv6</span><a class="go" href="https://discord.com/invite/ZfFSBzdsv6" target="_blank" rel="noopener">Join on Discord →</a></div>
+      <div class="soc"><div class="soc-top"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><span class="label" style="color:var(--muted)">Linktree</span><h3>All our links</h3></div></div><p>Membership portal, sign-up forms and everything else in one place.</p><span class="handle">linktr.ee</span><a class="go" href="https://linktr.ee/qr/f2ca4c24-2402-4d4c-ac7b-5e78b938c1d9" target="_blank" rel="noopener">Open Linktree →</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:grid;gap:10px"><p>ALPFA Berkeley City College · a student chapter of the Association of Latino Professionals For America</p><div class="foot-links"><a href="https://www.instagram.com/alpfabcc/" target="_blank" rel="noopener">Instagram @alpfabcc</a><a href="https://linktr.ee/qr/f2ca4c24-2402-4d4c-ac7b-5e78b938c1d9" target="_blank" rel="noopener">Linktree</a><a href="https://discord.com/invite/ZfFSBzdsv6" target="_blank" rel="noopener">Discord</a></div></div>
+    <a class="hub" href="https://membership.alpfaplus.org/login" target="_blank" rel="noopener">Register with ALPFA National →</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Days until the next event
+  var target = new Date(2026, 9, 27, 12, 20);
+  var now = new Date();
+  var d = Math.ceil((new Date(target.getFullYear(), target.getMonth(), target.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
+  var el = document.getElementById('days'), lab = document.getElementById('days-label');
+  if (d > 1) { el.textContent = d; lab.textContent = 'days to go'; }
+  else if (d === 1) { el.textContent = '1'; lab.textContent = 'day to go'; }
+  else if (d === 0) { el.textContent = 'Today'; lab.textContent = ''; }
+  else { el.textContent = 'Done'; lab.textContent = 'see the next event below'; }
+
+  // Semester strip: Oct 1 to Dec 31, pins placed by date
+  var start = Date.UTC(2026, 9, 1), end = Date.UTC(2026, 11, 31);
+  var pct = function(y, m, dd){ return (Date.UTC(y, m, dd) - start) / (end - start) * 100; };
+  var pins = [
+    {name:'Pumpkin Social', when:'Oct 27', a:[2026,9,27], now:true},
+    {name:'Student Symposium', when:'Nov 7', a:[2026,10,7], low:true},
+    {name:'Round Robin', when:'Nov 16–18', a:[2026,10,16], b:[2026,10,18]},
+    {name:'Career Panel', when:'Nov 30–Dec 2', a:[2026,10,30], b:[2026,11,2], low:true}
+  ];
+  var track = document.getElementById('track');
+  pins.forEach(function(p){
+    var x1 = pct.apply(null, p.a), x2 = p.b ? pct.apply(null, p.b) : x1;
+    var div = document.createElement('div');
+    div.className = 'pin' + (p.b ? ' span' : '') + (p.now ? ' now' : '') + (p.low ? ' low' : '');
+    div.style.left = ((x1 + x2) / 2) + '%';
+    var dot = document.createElement('i');
+    if (p.b) dot.style.width = Math.max(22, (x2 - x1) / 100 * track.clientWidth) + 'px';
+    var b = document.createElement('b'); b.textContent = p.name;
+    var s = document.createElement('small'); s.textContent = p.when;
+    div.appendChild(dot); div.appendChild(b); div.appendChild(s);
+    track.appendChild(div);
+  });
+})();
+</script>
+
+</body>
+</html>
